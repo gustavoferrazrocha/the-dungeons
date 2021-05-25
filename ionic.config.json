@@ -1,0 +1,7 @@
+{
+  "name": "theDugeon",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
