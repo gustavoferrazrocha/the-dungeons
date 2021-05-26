@@ -1,0 +1,34 @@
+<ion-toolbar color="primary">
+  <ion-buttons
+    slot="start"
+    fill="clear"
+    shape="round"
+    color="light"
+    (click)="close()"
+  >
+    <ion-button (click)="close()">
+      <ion-icon name="arrow-back"></ion-icon
+    ></ion-button>
+  </ion-buttons>
+  <ion-title>Options</ion-title>
+</ion-toolbar>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+        <ion-label>
+          <span>MÚSICA ON/OF</span>
+        </ion-label>
+        <ion-toggle (ionChange)='toggleAudio()' [checked]='toggleChecked' color='secondary'></ion-toggle>
+    </ion-item>
+  
+    <ion-item class="volumeRange">
+      <ion-label>
+        <span>VOLUME</span>
+      </ion-label>
+      <ion-icon class="volumeIcon" name="volume-high"></ion-icon>
+      <ion-range  (ionChange)='changeVolume($event)' value='100' pin='true' min="1" max="100" color="secondary">
+      </ion-range>
+    </ion-item>
+  </ion-list>
+</ion-content>
