@@ -3,13 +3,17 @@
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
+  "main": "src/electron-starter.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "electron": "electron .",
+    "electron-serve": "ng build --prod && electron .",
+    "windows-release": "electron-packager . theDungeon --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/assets/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName='Electron Tutorial App'"
   },
   "private": true,
   "dependencies": {
@@ -23,7 +27,9 @@
     "@capacitor/core": "3.0.0",
     "@capacitor/haptics": "1.0.0",
     "@capacitor/keyboard": "1.0.0",
+    "@ionic-native/native-audio": "^5.33.0",
     "@ionic/angular": "^5.5.2",
+    "cordova-plugin-nativeaudio": "^3.0.9",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -45,6 +51,9 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "4.16.1",
     "@typescript-eslint/parser": "4.16.1",
+    "electron": "^13.0.1",
+    "electron-packager": "^15.2.0",
+    "electron-winstaller": "^5.0.0",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
