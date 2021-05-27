@@ -37,7 +37,11 @@ ion-app{
             justify-content: center;
             flex-wrap: wrap;
             ion-item{
+                cursor: pointer;
                 color: #ffff;
+                ion-icon{
+                    color: #ffff;
+                }
             }
         }
     }
