@@ -17,6 +17,8 @@ $RECYCLE.BIN/
 log.txt
 npm-debug.log*
 
+theDungeons-instalador
+release-builds
 /.idea
 /.ionic
 /.sass-cache
