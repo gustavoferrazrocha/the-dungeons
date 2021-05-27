@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+ion-app{
+    --ion-background-color: #252525;
+    ion-header{
+        ion-toolbar{
+            ion-title{
+                text-align: center;
+                color: #ffff;
+            }
+        }
+    }
+    ion-content{
+        --ion-background-color: #3333;
+        ion-buttons{
+            display: flex;
+            flex-direction: column;
+            margin-top: 6rem;
+                ion-button{
+                    font-size: 1.5rem;
+                    height: 5rem;
+                }  
+                ion-button:hover{
+                    background-color: black;
+                    color: #ffff;
+                }
+        }
+    }
+    ion-footer{
+        ion-list{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            ion-item{
+                color: #ffff;
+            }
+        }
+    }
+}
