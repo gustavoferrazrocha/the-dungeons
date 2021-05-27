@@ -25,7 +25,7 @@
     <ion-item class="volumeRange">
         <span class="volume">VOLUME</span>
       <ion-icon class="volumeIcon" name="volume-high"></ion-icon>
-      <ion-range  (ionChange)='changeVolume($event)' value='100' pin='true' min="1" max="100" color="secondary">
+      <ion-range  (ionChange)='changeVolume($event)' [value]='volume' pin='true' min="1" max="100" color="secondary">
       </ion-range>
     </ion-item>
   </ion-list>

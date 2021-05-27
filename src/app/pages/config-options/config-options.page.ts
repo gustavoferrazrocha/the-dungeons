@@ -10,12 +10,13 @@ import {AudioService} from "../../services/audio/audio.service"
 export class ConfigOptionsPage implements OnInit {
   @Input() title: string;
   public toggleChecked: boolean;
+  public volume: number;
   constructor(
     public modalController: ModalController,
     public audioService: AudioService,
     ) { 
-    this.toggleChecked = localStorage.getItem("toggleChecked") == "true"?true:false
-
+    this.toggleChecked = !audioService.muted
+    this.volume = audioService.getVolume();
   }
 
   ngOnInit() {
@@ -26,10 +27,8 @@ export class ConfigOptionsPage implements OnInit {
   toggleAudio(){
     this.audioService.toggleAudio();
     if(this.toggleChecked == false){
-      localStorage.setItem("toggleChecked", "true")
       this.toggleChecked = true
     }else{
-      localStorage.setItem("toggleChecked", "false")
       this.toggleChecked = false
     }    
   }

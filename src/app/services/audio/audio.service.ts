@@ -26,10 +26,10 @@ export class AudioService {
     }
   }
   getVolume(){
-   return this.audio.volume
+   return this.audio.volume * 100;
   }
   setVolume(volume){
-    this.audio.volume = volume / 100
+    this.audio.volume = volume / 100;
   }
   audioPlay(){
     this.audio.play();
