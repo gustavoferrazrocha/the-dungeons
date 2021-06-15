@@ -10,27 +10,48 @@ export class GameScreenPage implements OnInit {
   phaserGame: Phaser.Game;
   config: Phaser.Types.Core.GameConfig;
 
-  constructor() { 
-  }
+  constructor() {}
 
   ngOnInit() {
   }
-  ionViewWillEnter(){
-    this.initializePhaser();
+ async ionViewWillEnter(){
+   try{
+      const element = document.getElementById('game');
+      await element.requestFullscreen();
+      this.initializePhaser();
+      document.addEventListener('fullscreenchange', (event) => {
+        console.log('entrou');
+        if (!document.fullscreenElement) {
+          alert('saiu');
+        }
+      });
+    }
+    catch(error){
+      alert(error);
+    }
+
   }
 
   initializePhaser(){
     this.config = {
       type: Phaser.AUTO,
-      width: 200,
-      height: 200,
       parent: 'game',
+      physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 300 },
+            debug: false
+        }
+      },
       scene: [firstScene],
       scale: {
-        mode: Phaser.Scale.ENVELOP
+        width:1366,
+        height:768,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        mode: Phaser.Scale.FIT
       }
-    }
-    this.phaserGame = new Phaser.Game(this.config)
+    };
+    this.phaserGame = new Phaser.Game(this.config);
   }
 
 }
