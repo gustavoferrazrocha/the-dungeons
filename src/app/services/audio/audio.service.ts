@@ -8,7 +8,7 @@ export class AudioService {
   public muted: boolean;
   constructor() {
     this.audio.loop = true;
-    this.muted = true
+    this.muted = true;
   }
   async defaultAudio(beepId) {
    this.audio=  new Audio(`assets/sounds/8bit${beepId}.mp3`);

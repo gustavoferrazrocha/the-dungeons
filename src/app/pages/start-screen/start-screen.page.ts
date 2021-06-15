@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ModalController, NavController} from "@ionic/angular";
+import {ModalController, NavController} from '@ionic/angular';
 import { ConfigOptionsPage } from '../config-options/config-options.page';
 
 @Component({
@@ -15,10 +15,10 @@ export class StartScreenPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    localStorage.setItem("toggleChecked", "false")
+    localStorage.setItem('toggleChecked', 'false');
   }
   openGame(){
-    this.navCtrl.navigateForward("game-screen")
+    this.navCtrl.navigateForward('game-screen');
   }
   async openOptions() {
     const modal = await this.modalController.create({
